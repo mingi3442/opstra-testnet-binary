@@ -8,7 +8,7 @@
 # The minimum gas prices a validator is willing to accept for processing a
 # transaction. A transaction's fees must meet the minimum of any denomination
 # specified in this config (e.g. 0.25token1;0.0001token2).
-minimum-gas-prices = "0opstra"
+minimum-gas-prices = "0uopstra"
 
 # The maximum gas a query coming over rest/grpc may consume.
 # If this is set to zero, the query can consume an unbounded amount of gas.
@@ -105,7 +105,7 @@ prometheus-retention-time = 0
 # metrics emitted using the wrapper functions defined in telemetry package.
 #
 # Example:
-# [["chain_id", "cosmoshub-1"]]
+# [["chain_id", "opstra-testnet-1"]]
 global-labels = [
 ]
 
@@ -116,13 +116,13 @@ global-labels = [
 [api]
 
 # Enable defines if the API server should be enabled.
-enable = false
+enable = true
 
 # Swagger defines if swagger documentation should automatically be registered.
 swagger = false
 
 # Address defines the API server to listen on.
-address = "tcp://localhost:1317"
+address = "tcp://0.0.0.0:1317"
 
 # MaxOpenConnections defines the number of maximum open connections.
 max-open-connections = 1000
