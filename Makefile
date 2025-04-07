@@ -5,21 +5,21 @@
 # 기본 타겟
 all: help
 
-# 설치
+# Install
 install:
-	@echo "==> opstrad 설치 중..."
+	@echo "==> Install opstrad..."
 	@chmod +x scripts/setup-linux.sh
 	@./scripts/setup-linux.sh
-	@echo "==> 설치 완료"
+	@echo "==> Install completed"
 
-# 초기화
+# Initialize
 init:
-	@echo "==> opstrad 초기화 중..."
+	@echo "==> Initialize node..."
 	@chmod +x scripts/init.sh
 	@./scripts/init.sh
-	@echo "==> 초기화 완료"
+	@echo "==> Initialize completed. To start the node, run 'opstrad start' command."
 
-# 노드 시작
+# Start
 start:
 	@echo "==> opstrad 노드 시작 중..."
 	@opstrad start
