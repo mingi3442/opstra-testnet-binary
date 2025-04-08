@@ -5,23 +5,23 @@
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 PARENT_DIR="$(dirname "$SCRIPT_DIR")"
 
-echo "==> opstrad 리눅스 설치 스크립트 시작"
+echo "==> opstrad Linux installation script started"
 
-# 바이너리 파일 복사
-echo "==> 바이너리 파일 복사 중..."
+# Copy binary file
+echo "==> Copying binary file..."
 sudo cp "$PARENT_DIR/bin/opstrad-linux-amd64" /usr/local/bin/opstrad
 sudo chmod +x /usr/local/bin/opstrad
 
-# 설정 디렉토리 생성
-echo "==> 설정 디렉토리 생성 중..."
+# Setting directory creation
+echo "==> Setting directory creation..."
 mkdir -p ~/.opstrad/config
 
-# 기본 설정 파일만 복사 (validator 키는 복사하지 않음)
-echo "==> 설정 파일 복사 중..."
+# Default configuration files only (do not copy validator key)
+echo "==> Configuration file copying..."
 cp "$PARENT_DIR/config/app.toml" ~/.opstrad/config/
 cp "$PARENT_DIR/config/config.toml" ~/.opstrad/config/
 cp "$PARENT_DIR/config/genesis.json" ~/.opstrad/config/
 
-echo "==> opstrad가 성공적으로 설치되었습니다."
-echo "==> 주의: 각 노드마다 고유한 validator 키를 생성해야 합니다."
-echo "==> 초기화를 위해 다음 명령어를 실행하세요: ./scripts/init.sh"
+echo "==> opstrad successfully installed."
+echo "==> Note: Each node must have its own unique validator key."
+echo "==> To initialize, run: ./scripts/init.sh"

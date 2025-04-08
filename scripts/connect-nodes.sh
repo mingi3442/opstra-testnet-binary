@@ -25,7 +25,7 @@ if grep -q "^persistent_peers =" "$CONFIG_FILE"; then
     # 이미 설정이 있으면 업데이트
     CURRENT_PEERS=$(grep "^persistent_peers =" "$CONFIG_FILE" | cut -d'"' -f2)
     
-    if [[ "$CURRENT_PEERS" == *"$PEER"* ]]; then
+    if [[ "$CURRENT_PEERS" == *"$PEER"* ]]; then    
         echo "이미 $PEER 노드가 연결되어 있습니다."
     else
         if [ -z "$CURRENT_PEERS" ]; then
